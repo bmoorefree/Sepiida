@@ -19,7 +19,7 @@ apt install -y squid
 echo "Configuring SQUID proxy server..."
 cat <<EOF > /etc/squid/squid.conf
 http_port 3128
-acl blocked_domains dstdomain "/etc/squid/blocked_domains.txt"
+acl blocked_domains dstdomain "/etc/squid/blocked_domains.acl"
 http_access deny blocked_domains
 http_access allow all
 
@@ -48,7 +48,7 @@ systemctl restart squid
 wget https://github.com/bmoorefree/Sepiida/new/main/sepiida.png /root/sepiida.png
 if [ -f /root/sepiina.png ]; then
     echo "Copying custom logo..."
-    cp /root/sepiina.png /usr/share/pixmaps/sepiina.png
+    cp /root/Sepiina.png /usr/share/pixmaps/Sepiina.png
 else
     echo "Custom logo not found at /root/sepiina.png. Skipping logo copy."
 fi
