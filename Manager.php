@@ -1,6 +1,6 @@
 <?php
 // Define the main ACL file and an associative array of categories with their corresponding flat file names.
-$aclFile = 'blocked_domains.acl';
+$aclFile = '/etc/squid/blocked_domains.acl';
 $categories = [
     'gambling'  => 'gambling_domains.acl',
     'sports'    => 'sports_domains.acl',
